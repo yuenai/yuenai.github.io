@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: DejaVu Sans Mono, monospace;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        randImage();
+      };
+    </script>
+    <title>Ehe</title>
+  </head>
+  <body>
+    <div class="container">
+      <img id="image" src="https://media.tenor.com/images/ea32d28f04ef909288bafad8d53ea58d/tenor.gif" alt="Anime Girls Dancing" style="height: 100px; position: absolute" onclick="randImage(this)" />
+      <div class="container text-center mt-5">
+        <h1>Ayook sepedaan bil</h1>
+        <img class="md" src="http://skoda-wlc.s3.amazonaws.com/2/2016/02/6dAwGjh.gif" alt="Cycling GIF" title="Cycling GIF" />
+        <h1>==========</h1>
+        <button class="btn btn-primary" id="btn_mau" onclick="showModal()">Kuyy</button>&nbsp;
+        <button class="btn btn-primary" id="btn_gamau" onclick="gamau(this)" style="position: absolute">Mager ah</button>
+      </div>
+      <div id="myModal" class="modal md">
+        <span class="close">&times;</span>
+        <img src="https://i.pinimg.com/originals/82/34/83/823483cfa99a1165523255368b8742ea.gif" alt="pentol gif" class="modal-content" id="img01" style="width: 20%" />
+        <div id="caption"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function showModal() {
+      var modal = document.getElementById("myModal");
+      var img = document.getElementById("myImg");
+      var modalImg = document.getElementById("img01");
+      var captionText = document.getElementById("caption");
+      modal.style.display = "block";
+      modalImg.src = modalImg.src;
+      captionText.innerHTML = modalImg.alt;
+
+      var span = document.getElementsByClassName("close")[0];
+      modal.onclick = function () {
+        modal.style.display = "none";
+      };
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+      modalImg.onclick = function () {
+        modal.style.display = "none";
+      };
+    }
+
+    function randImage() {
+      var picture = document.getElementById("image");
+      // var i = Math.floor(Math.random() * 300) + 1;
+      // var j = Math.floor(Math.random() * 100) + picture.offsetTop;
+      var spaceW = screen.height - picture.height;
+      var spaceH = screen.width - picture.width;
+
+      setInterval(function () {
+        // img.style.left = i + "px";
+        // img.style.bottom = j + "px";
+        picture.style.top = Math.floor(Math.random() * spaceW) + "px";
+        picture.style.left = Math.floor(Math.random() * spaceH) + "px";
+      }, 1000);
+    }
+    function gamau(id) {
+      var mau = document.getElementById("btn_gamau");
+      var i = Math.floor(Math.random() * 300) + 1;
+      var j = Math.floor(Math.random() * 100) + mau.offsetTop;
+      id.style.left = i + "px";
+      id.style.bottom = j + "px";
+    }
+  </script>
+</html>
